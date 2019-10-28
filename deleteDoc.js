@@ -25,11 +25,11 @@ var personSchema = mongoose.Schema({
 var Person = mongoose.model("Person",personSchema);
 
 
-Person.update({age :100},{name : 'Tom'},(err, response) => {
+Person.findOneAndRemove({age:23},(err, response) => {
     console.log(response);
 });
 
- //Model.findOneAndUpdate(condition, updates, callback)
-//Model.findByIdAndUpdate(id, updates, callback)
+ //Model.findOneAndRemove(condition, [callback])
+//Model.findByIdAndRemove(id, [callback])
 
 app.listen(8080);
